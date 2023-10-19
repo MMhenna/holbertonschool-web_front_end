@@ -1,0 +1,14 @@
+// Taks 9
+
+@mixin margin($dim) {
+  margin-left: $dim;
+  margin-right: $dim;
+}
+
+body {
+  @include margin(10px);
+}
+
+div {
+  @include margin(15px);
+}
