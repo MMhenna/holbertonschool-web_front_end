@@ -1,0 +1,7 @@
+// Task 14
+
+@for $i from 1 to 4 {
+  .col-#{$i} {
+    width: percentage(1 / $i);
+  }
+}
