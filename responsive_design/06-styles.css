@@ -159,7 +159,7 @@ template {
 }
 
 /* Variables
-            ============================= */
+              ============================= */
 
 :root {
   --color-primary: #d73953;
@@ -242,7 +242,7 @@ template {
 }
 
 /* Base
-                ============================= */
+                  ============================= */
 
 *,
 *:before,
@@ -319,7 +319,7 @@ a:active {
 }
 
 /* Helpers
-                ============================= */
+                  ============================= */
 
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
@@ -338,7 +338,7 @@ main img {
 /*** 2. LAYOUT ***/
 
 /* Layout
-                ============================= */
+                  ============================= */
 
 .container {
   max-width: 960px;
@@ -347,7 +347,7 @@ main img {
 }
 
 /* Grid
-                ============================= */
+                  ============================= */
 
 ul.row {
   margin: -1rem;
@@ -394,7 +394,7 @@ ul.row {
 }
 
 /* Navbar
-                ============================= */
+                  ============================= */
 
 .nav {
   margin: 0;
@@ -467,6 +467,7 @@ ul.row {
   padding: 2.5rem;
   position: relative;
   user-select: none;
+  /* display: none; */
 }
 
 .header .menu-icon .navicon {
@@ -497,8 +498,71 @@ ul.row {
   top: -0.7rem;
 }
 
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.menu-btn:checked ~ .navbar-menu {
+  display: block;
+}
+
+.menu-btn:checked ~ .navbar-menu .nav {
+  max-height: 100%;
+  overflow: inherit;
+}
+
+.header .menu-btn:checked + .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked + .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked + .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked + .menu-icon .navicon::before,
+.header .menu-btn:checked + .menu-icon .navicon::after {
+  top: 0;
+}
+
+@media screen and (max-widht: 767px) {
+  :root {
+    --header-padding: 2rem 0 0;
+  }
+
+  .header {
+    background: var(--color-black);
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    padding: 0 1.5rem;
+  }
+
+  .header .menu-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-widht: 480px) {
+  .header-logo {
+    flex-basis: 70%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .header-logo {
+    flex-basis: 79%;
+  }
+}
+
 /* Header
-                ============================= */
+                  ============================= */
 
 .header {
   padding: var(--header-padding);
@@ -514,7 +578,7 @@ ul.row {
 }
 
 /* Footer
-                ============================= */
+                  ============================= */
 
 .footer {
   --nav-item-font-weight: normal;
@@ -547,7 +611,7 @@ ul.row {
 /*** 3. SECTION ***/
 
 /* Section (all styles)
-                ============================= */
+                  ============================= */
 
 .section {
   padding: var(--section-padding);
@@ -584,7 +648,7 @@ ul.row {
 }
 
 /* Section theming
-                ============================= */
+                  ============================= */
 
 [data-section-theme="dark"] {
   --button-color: var(--color-white);
@@ -594,7 +658,7 @@ ul.row {
 }
 
 /* Section HERO
-                ============================= */
+                  ============================= */
 
 .section-hero {
   position: relative;
@@ -628,8 +692,21 @@ ul.row {
   justify-content: center;
   min-height: 35vh;
 }
+
+.section-hero {
+  margin: -0.1rem 0;
+}
+
+.hero-homepage {
+  background-position: 85% 0;
+}
+
+.section-hero .section-body {
+  padding: 2rem;
+}
+
 /* Section Latest news
-                ============================= */
+                  ============================= */
 
 .section-latest-news .row {
   flex-direction: row-reverse;
@@ -642,14 +719,14 @@ ul.row {
 }
 
 /* Section SERVICES
-                ============================= */
+                  ============================= */
 
 .section-services .row {
   flex-wrap: wrap;
 }
 
 /* Section ABOUT US
-                ============================= */
+                  ============================= */
 
 .section-about-us [class*="col-"] {
   align-self: center;
@@ -658,14 +735,14 @@ ul.row {
 /*** 4. CARD ***/
 
 /* Card (all styles)
-                ============================= */
+                  ============================= */
 
 .card-category {
   color: var(--color-primary);
 }
 
 /* Card WORK
-                ============================= */
+                  ============================= */
 
 .card-work .card-outer {
   position: relative;
@@ -730,7 +807,7 @@ ul.row {
 }
 
 /* Card SERVICES
-                ============================= */
+                  ============================= */
 
 .card-services .card-title {
   margin: 0;
@@ -751,7 +828,7 @@ ul.row {
 }
 
 /* Card TESTIMONIAL
-                ============================= */
+                  ============================= */
 
 .card-testimonial {
   text-align: center;
@@ -786,7 +863,7 @@ ul.row {
 /*** ARTICLE PAGE ***/
 
 /* Section HERO (article)
-                ============================= */
+                  ============================= */
 
 .hero-article {
   background-size: 150rem 100rem;
@@ -821,7 +898,7 @@ ul.row {
 }
 
 /* Post
-                ============================= */
+                  ============================= */
 
 .post {
   display: flex;
@@ -856,7 +933,7 @@ ul.row {
 }
 
 /* Post Meta
-                ============================= */
+                  ============================= */
 
 .post-meta-list {
   flex-direction: column;
@@ -883,7 +960,7 @@ ul.row {
 }
 
 /* Tag list
-                ============================= */
+                  ============================= */
 
 .tag-list {
   padding: 0;
@@ -905,7 +982,7 @@ ul.row {
 /*** FORM ***/
 
 /* Comment section
-                ============================= */
+                  ============================= */
 
 .post-comments {
   width: 80%;
@@ -918,7 +995,7 @@ ul.row {
 }
 
 /* Basic form
-                ============================= */
+                  ============================= */
 
 form {
   display: flex;
@@ -973,7 +1050,7 @@ textarea:focus {
 }
 
 /* Form group
-                ============================= */
+                  ============================= */
 
 .form-group {
   padding: 1rem;
@@ -987,7 +1064,7 @@ textarea:focus {
 }
 
 /* Form field
-                ============================= */
+                  ============================= */
 
 .form-field-container {
   position: relative;
@@ -998,7 +1075,7 @@ textarea:focus {
 }
 
 /* Form help
-                ============================= */
+                  ============================= */
 
 .form-group .form-help {
   margin: 0;
@@ -1017,7 +1094,7 @@ textarea:focus {
 }
 
 /* Form error handling
-                ============================= */
+                  ============================= */
 
 input:not(:placeholder-shown) ~ .form-field-icon::after {
   height: 100%;
